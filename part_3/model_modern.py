@@ -113,8 +113,8 @@ class GPTModern(nn.Module):
             next_logits = _tk(next_logits, top_k=top_k, top_p=top_p)
             probs = torch.softmax(next_logits, dim=-1)
             topv, topi = torch.topk(probs, 10)
-            print("top ids:", topi.tolist())
-            print("top vs:", topv.tolist())
+            # print("top ids:", topi.tolist())
+            # print("top vs:", topv.tolist())
             next_id = torch.argmax(probs, dim=-1, keepdim=True) if temperature == 0.0 else torch.multinomial(probs, 1)
             idx = torch.cat([idx, next_id], dim=1)
 
