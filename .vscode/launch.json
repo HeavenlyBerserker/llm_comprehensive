@@ -1,0 +1,22 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Debug Current File (LLM Env)",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "cwd": "${fileDirname}",
+            "python": "/home/hxu/miniconda3/envs/llm/bin/python",
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}",
+                "PATH": "/home/hxu/miniconda3/envs/llm/bin:${env:PATH}",
+                "CONDA_DEFAULT_ENV": "llm",
+                "CONDA_PREFIX": "/home/hxu/miniconda3/envs/llm",
+                "CONDA_PYTHON_EXE": "/home/hxu/miniconda3/envs/llm/bin/python"
+            },
+            "justMyCode": false
+        }
+    ]
+}

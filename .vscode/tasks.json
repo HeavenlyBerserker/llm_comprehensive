@@ -1,0 +1,50 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Activate LLM Environment",
+            "type": "shell",
+            "command": "conda",
+            "args": ["activate", "llm"],
+            "group": "build",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared"
+            }
+        },
+        {
+            "label": "Run Part 3 Demo",
+            "type": "shell",
+            "command": "conda",
+            "args": ["run", "-n", "llm", "python", "orchestrator.py", "--demo"],
+            "options": {
+                "cwd": "${workspaceFolder}/part_3"
+            },
+            "group": "build",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared"
+            }
+        },
+        {
+            "label": "Run Part 6 Demo",
+            "type": "shell",
+            "command": "conda",
+            "args": ["run", "-n", "llm", "python", "orchestrator.py", "--demo"],
+            "options": {
+                "cwd": "${workspaceFolder}/part_6"
+            },
+            "group": "build",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared"
+            }
+        }
+    ]
+}

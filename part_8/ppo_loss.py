@@ -23,7 +23,9 @@ def ppo_losses(new_logp, old_logp, adv, new_values, old_values, returns,
     value_loss = F.mse_loss(new_values, returns)
 
     # entropy bonus (we approximate entropy via -new_logp mean; strictly needs full dist)
-    entropy = -new_logp.mean()
+    entropy = -new_logp.mean() 
+    # This promotes exploration by encouraging the model to take more diverse actions. 
+    # It also helps with KL divergence regularization.
 
     # approx KL for logging
     approx_kl = torch.mean(old_logp - new_logp)

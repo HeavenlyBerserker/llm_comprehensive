@@ -47,7 +47,7 @@ def main():
     device = torch.device('cuda' if torch.cuda.is_available() and not args.cpu else 'cpu')
 
     # tokenizer
-    tok = RLHFTokenizer(block_size=args.block_size, bpe_dir=args.bpe_dir)
+    tok = RLHFTokenizer(block_size=args.block_size, bpe_dir=args.bpe_dir) # BPE tokenizer from Part 4
 
     # Load SFT policy as initial policy AND reference
     ckpt = torch.load(args.policy_ckpt, map_location=device)
